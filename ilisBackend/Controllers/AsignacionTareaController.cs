@@ -46,7 +46,7 @@ namespace ilisBackend.Controllers
 
 
         [HttpPost("AssignTask")]
-        public async Task<HttpStatusCode> InsertUser(AsignacionTarea assignment)
+        public async Task<HttpStatusCode> AssignTask(AsignacionTarea assignment)
         {
             var entity = new AsignacionTarea()
             {

@@ -73,7 +73,7 @@ namespace ilisBackend.Controllers
       
 
         [HttpPost("RegisterTask")]
-        public async Task<HttpStatusCode> InsertUser(Tarea task)
+        public async Task<HttpStatusCode> InsertTask(Tarea task)
         {
             var entity = new Tarea()
             {
@@ -87,7 +87,7 @@ namespace ilisBackend.Controllers
 
 
         [HttpPut("UpdateTask")]
-        public async Task<HttpStatusCode> UpdateUser(Tarea task)
+        public async Task<HttpStatusCode> UpdateTask(Tarea task)
         {
             var entity = await _context.Tareas.FirstOrDefaultAsync(s => s.Id == task.Id);
             entity.DescripcionTarea = task.DescripcionTarea;
@@ -98,7 +98,7 @@ namespace ilisBackend.Controllers
 
 
         [HttpDelete("DeleteTask/{Id}")]
-        public async Task<HttpStatusCode> DeleteCitizen(int Id)
+        public async Task<HttpStatusCode> DeleteTask(int Id)
         {
             var entity = new Tarea()
             {

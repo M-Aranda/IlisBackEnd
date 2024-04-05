@@ -44,7 +44,7 @@ namespace ilisBackend.Controllers
 
 
         [HttpPost("RegisterCitizen/{Nombre}")]
-        public async Task<HttpStatusCode> InsertUser(String Nombre)
+        public async Task<HttpStatusCode> RegisterCitizen(String Nombre)
         {
             var entity = new Ciudadano()
             {
@@ -57,7 +57,7 @@ namespace ilisBackend.Controllers
 
 
         [HttpPut("UpdateCitizen")]
-        public async Task<HttpStatusCode> UpdateUser(Ciudadano Citizen)
+        public async Task<HttpStatusCode> UpdateCitizen(Ciudadano Citizen)
         {
             var entity = await _context.Ciudadanos.FirstOrDefaultAsync(s => s.Id == Citizen.Id);
             entity.Nombre = Citizen.Nombre;
