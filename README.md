@@ -1,5 +1,5 @@
 
-1. Correr script SQL o migraciones
+1. Correr script SQL
 2. Compilar proyecto en Visual Studio 2022
 3. Ejecutar
 4. Debiese abrirse una pestaña de navegación de Swagger, con las APIS creadas
