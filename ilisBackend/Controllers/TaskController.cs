@@ -67,10 +67,10 @@ namespace ilisBackend.Controllers
             {
                 return tasks;
             }
-        
+        }
+
 
       
-
 
         [HttpPost("RegisterTask")]
         public async Task<HttpStatusCode> InsertUser(Tarea task)
