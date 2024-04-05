@@ -3,6 +3,7 @@ using ilisBackend.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace ilisBackend.Controllers
 {
@@ -43,6 +44,32 @@ namespace ilisBackend.Controllers
                 return List;
             }
         }
+
+
+        [HttpGet("GetTasksByWeekDay/{weekDay}")]
+        public async Task<ActionResult<List<TareaDTO>>> GetByWeekDay(int weekDay)
+        {
+            var tasks = await _context.Tareas
+                .Where(s => s.DiaDeLaSemana == weekDay) 
+                .Select(s => new TareaDTO
+                {
+                    Id = s.Id,
+                    DescripcionTarea = s.DescripcionTarea,
+                    DiaDeLaSemana = s.DiaDeLaSemana
+                })
+                .ToListAsync();
+
+            if (tasks.Count == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return tasks;
+            }
+        }
+
+
 
 
         [HttpPost("RegisterTask")]
