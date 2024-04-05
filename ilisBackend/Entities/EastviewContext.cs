@@ -81,5 +81,5 @@ public partial class EastviewContext : DbContext
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
-public DbSet<ilisBackend.DTO.CiudadanoDTO> CiudadanoDTO { get; set; } = default!;
+
 }
